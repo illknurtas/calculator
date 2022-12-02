@@ -5,7 +5,7 @@ const display_output = document.querySelector('.display .output');
 let input = "";
 for (let key of keys){
     const value = key.dataset.key;
-    key.addEventListener('click',()=>{
+    key.addEventListener('click', () => {
         if (value =='clear'){
             input = "";
             display_input.innerHTML="";
@@ -22,7 +22,8 @@ for (let key of keys){
         }
         else if(value == "brackets"){
             if (input.indexOf("(")== -1 || 
-            input.indexOf("(") != -1 && input.lastIndexOf("(") < input.lastIndexOf(")")){
+            input.indexOf("(") != -1 &&
+            input.indexOf(")") !=-1 && input.lastIndexOf("(") < input.lastIndexOf(")")){
                 input += "(";
             }
             else if (input.indexOf("(") != -1 && input.indexOf(")") == -1 ||
